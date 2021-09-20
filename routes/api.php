@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::get('/posts','Api\PostController@index');
+Route::get('/post/{slug}' , 'Api\PostController@show');

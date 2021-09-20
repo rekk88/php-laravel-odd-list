@@ -7,7 +7,9 @@
             <h5 class="card-title">{{post.title}}</h5>
             <p>{{dataFormat(post.created_at)}}</p>
             <p class="card-text">{{cutPost(post.content,150)}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <router-link :to="{name:'post-detail',params:{slug:post.slug}}" >
+              Dettagli
+            </router-link>
           </div>
         </div>
       </div>
