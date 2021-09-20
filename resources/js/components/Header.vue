@@ -7,14 +7,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+          <li class="nav-item" v-for="(link,index) in menu" :key="index">
+            <router-link :to="{name: link.routeName}" class="nav-link">
+              {{link.label}}
+            </router-link>
+            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -27,7 +24,29 @@
 
 <script>
 export default {
-  name:"Header"
+  name:"Header",
+  data() {
+    return {
+      menu: [
+        {
+          label:'Home',
+          routeName:'home'
+        },
+        {
+          label:'About',
+          routeName:'about'
+        },
+        {
+          label:'Contatti',
+          routeName:'contact'
+        },
+        {
+          label:'I miei Post',
+          routeName:'post'
+        }
+      ],
+    }
+  },
 }
 </script>
 
