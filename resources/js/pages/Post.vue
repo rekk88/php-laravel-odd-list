@@ -39,11 +39,10 @@ export default {
         posts : [], //variabile che contiene tutti i post(dopo la chiamata axios)
         currentPage : "",
         lastPage : "",
-
       }
     },
     created() {
-      this.getPosts(1)
+      this.getPosts(1);
     },
     methods: {
       getPosts(pagePost){
